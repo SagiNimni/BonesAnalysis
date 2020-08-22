@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5a52a60e-eab8-4d0e-b20c-fa5654d457d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenTiff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/Filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GPU.py" beforeDir="false" afterPath="$PROJECT_DIR$/GPU.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detectHoles.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectHoles.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kernels.cl" beforeDir="false" afterPath="$PROJECT_DIR$/kernels.cl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +19,7 @@
     <session id="-343265945">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="13" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="1" />
@@ -27,9 +31,10 @@
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.19" value="3" />
           <entry key="project.open.time.20" value="2" />
+          <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -38,52 +43,56 @@
           <entry key="csv" value="2" />
           <entry key="h" value="8" />
           <entry key="jpeg" value="1" />
-          <entry key="jpg" value="5" />
-          <entry key="md" value="2" />
-          <entry key="png" value="3" />
-          <entry key="py" value="32" />
+          <entry key="jpg" value="10" />
+          <entry key="json" value="4" />
+          <entry key="md" value="4" />
+          <entry key="png" value="4" />
+          <entry key="py" value="43" />
           <entry key="test" value="1" />
-          <entry key="tif" value="5" />
+          <entry key="tif" value="8" />
           <entry key="tiff" value="1" />
-          <entry key="txt" value="2" />
+          <entry key="txt" value="3" />
           <entry key="url" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="C++" value="12" />
-          <entry key="Image" value="15" />
-          <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="5" />
-          <entry key="Python" value="32" />
+          <entry key="Image" value="24" />
+          <entry key="JSON" value="4" />
+          <entry key="Markdown" value="4" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Python" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="1794" />
-          <entry key="cl" value="8271" />
-          <entry key="py" value="14429" />
+          <entry key="Python Console" value="2009" />
+          <entry key="cl" value="8787" />
+          <entry key="md" value="11" />
+          <entry key="py" value="17474" />
           <entry key="test" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C++" value="8273" />
-          <entry key="Python" value="16223" />
+          <entry key="C++" value="8789" />
+          <entry key="Markdown" value="11" />
+          <entry key="Python" value="19483" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detectHoles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="34">
+              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
-                <marker date="1597836103311" expanded="true" signature="99:285" ph="..." />
+                <marker date="1598099188871" expanded="true" signature="238:475" ph="..." />
               </folding>
             </state>
           </provider>
@@ -92,10 +101,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Filters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-779">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="204">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,21 +113,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GPU.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="81" selection-start-line="44" selection-start-column="81" selection-end-line="44" selection-end-column="81" />
+            <state relative-caret-position="-1098">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="10" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <marker date="1597833883174" expanded="true" signature="1622:4060" ph="..." />
+                <marker date="1598095854115" expanded="true" signature="1885:4435" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kernels.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="1665">
+              <caret line="112" column="44" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="153">
+                <caret line="9" column="86" selection-start-line="9" selection-start-column="86" selection-end-line="9" selection-end-column="87" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -135,6 +155,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>queue</find>
+      <find>fp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,17 +166,19 @@
       <list>
         <option value="$PROJECT_DIR$/test" />
         <option value="$PROJECT_DIR$/test.cl" />
-        <option value="$PROJECT_DIR$/kernels.cl" />
         <option value="$PROJECT_DIR$/OpenTiff.py" />
+        <option value="$PROJECT_DIR$/metadata.py" />
+        <option value="$PROJECT_DIR$/kernels.cl" />
         <option value="$PROJECT_DIR$/GPU.py" />
         <option value="$PROJECT_DIR$/Filters.py" />
         <option value="$PROJECT_DIR$/detectHoles.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="306" />
-    <option name="y" value="-17" />
+    <option name="x" value="5" />
+    <option name="y" value="-29" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -165,6 +188,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -176,7 +200,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -204,7 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Filters">
+  <component name="RunManager" selected="Python.detectHoles">
     <configuration name="Filters" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BonesAnalysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -268,13 +291,59 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="detectHoles" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BonesAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/detectHoles.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="metadata" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BonesAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/metadata.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.OpenTiff" />
       <item itemvalue="Python.GPU" />
       <item itemvalue="Python.Filters" />
+      <item itemvalue="Python.detectHoles" />
+      <item itemvalue="Python.metadata" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.detectHoles" />
+        <item itemvalue="Python.metadata" />
         <item itemvalue="Python.Filters" />
         <item itemvalue="Python.OpenTiff" />
         <item itemvalue="Python.GPU" />
@@ -312,34 +381,34 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29934925" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30043384" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.329718" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1032666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1032666" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29826465" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29934925" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.329718" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.329718" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.329718" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -416,9 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result.tif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://C:/Python/Python_64bit/Lib/site-packages/numpy/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -486,70 +552,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/pyopencl/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="252" selection-start-line="252" selection-end-line="252" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/OpenTiff.py" />
+    <entry file="file://$PROJECT_DIR$/images/woman.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/test.tif">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/images/dog.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/json/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="179" column="10" selection-start-line="179" selection-start-column="8" selection-end-line="179" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exif.txt" />
+    <entry file="file://$PROJECT_DIR$/metadata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exif.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/result.tif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/pyopencl/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="863" selection-start-line="863" selection-end-line="863" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/608329258/cv2/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-568">
+          <caret line="7507" column="4" selection-start-line="7507" selection-start-column="4" selection-end-line="7507" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/detectHoles.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1598099188871" expanded="true" signature="238:475" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor />
+          <first_editor relative-caret-position="153">
+            <caret line="9" column="86" selection-start-line="9" selection-start-column="86" selection-end-line="9" selection-end-column="87" />
+          </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kernels.cl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="31" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpenTiff.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="54" selection-start-line="54" selection-end-line="71" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GPU.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="81" selection-start-line="44" selection-start-column="81" selection-end-line="44" selection-end-column="81" />
+        <state relative-caret-position="-1098">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="10" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1597833883174" expanded="true" signature="1622:4060" ph="..." />
+            <marker date="1598095854115" expanded="true" signature="1885:4435" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Filters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-779">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="204">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/detectHoles.py">
+    <entry file="file://$PROJECT_DIR$/kernels.cl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <marker date="1597836103311" expanded="true" signature="99:285" ph="..." />
-          </folding>
+        <state relative-caret-position="1665">
+          <caret line="112" column="44" selection-start-line="112" selection-start-column="44" selection-end-line="112" selection-end-column="44" />
         </state>
       </provider>
     </entry>

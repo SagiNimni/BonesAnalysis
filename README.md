@@ -2,7 +2,7 @@
 Detects holes in microscopic bone images for biology research. 
 Includes image filters that work with high resolution images(like tiff) and uses the GPU to improve performence.
 
-TECHNOLOGIES:
+**`TECHNOLOGIES:`**
 
 Python with the libraries:                                                                                                                      
       1.numpy- to store image's matrix                                                                                                                 
