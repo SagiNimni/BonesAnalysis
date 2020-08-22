@@ -1,5 +1,7 @@
 import pyopencl as cl
 import numpy as np
+import sys
+import os
 
 
 class CL:
@@ -13,6 +15,7 @@ class CL:
     """
 
     def __init__(self):
+        os.environ['PYOPENCL_COMPILER_OUTPUT'] = '1'
         self.ctx = cl.create_some_context()
         self.queue = cl.CommandQueue(self.ctx)
         self.program = None
@@ -20,7 +23,10 @@ class CL:
         self.dst_buff = None
         self.image_array = None
 
-    def load_program(self, filename):
+    def load_program(self, filename, mute=True):
+        if mute:
+            old_stdout = sys.stdout
+            sys.stdout = open(os.devnull, 'w')
         try:
             f = open(filename, 'r')
             code = "".join(f.readlines())
@@ -35,6 +41,9 @@ class CL:
                 self.angle_buff.release()
             except AttributeError:
                 raise e
+        finally:
+            if mute:
+                sys.stdout = old_stdout
 
     def load_image(self, image: np.ndarray):
         mf = cl.mem_flags
@@ -50,7 +59,8 @@ class CL:
                 mf = cl.mem_flags
                 self.angle_buff = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.image_array.astype(np.double).nbytes)
                 self.program.GradientCalculation(self.queue, self.image_array.shape, None, self.original_buff,
-                                                 self.dst_buff, self.angle_buff)
+                                                 self.dst_buff, self.angle_buff, np.float32(args[0]),
+                                                 np.float32(args[1]), np.float32(args[2]))
                 image = np.empty_like(self.image_array)
                 angle = np.empty_like(self.image_array.astype(np.double))
                 cl._enqueue_read_buffer(self.queue, self.dst_buff, image)

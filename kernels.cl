@@ -1,6 +1,6 @@
 #define PI 3.14159265358979323846
 
-__kernel void GradientCalculation(__global char *image, __global char *result, __global double *angle)
+__kernel void GradientCalculation(__global char *image, __global char *result, __global double *angle, float a, float b, float r)
 {
     unsigned int sizeX = get_global_size(1);
     unsigned int sizeY = get_global_size(0);
@@ -8,19 +8,19 @@ __kernel void GradientCalculation(__global char *image, __global char *result, _
     unsigned int x = get_global_id(1);
     unsigned int y = get_global_id(0);
 
-    float kernelX[3][3] = {{-1, 0, 1},
-                           {-3, 0, 3},
-                           {-1, 0, 1}};
-
-    float kernelY[3][3] = {{-1, -3, -1},
-                           {0, 0, 0},
-                           {1, 3, 1}};
-
-
-    int magX=0,magY=0;
-
-    if(x > 200 && x < sizeX - 200 && y > 30 && y < sizeY - 30)
+    float distance = sqrt((float)((x-a)*(x-a) + (y-b)*(y-b)));
+    if(distance <= r)
     {
+        float kernelX[3][3] = {{-1, 0, 1},
+                               {-12, 0, 12},
+                               {-1, 0, 1}};
+
+        float kernelY[3][3] = {{-1, -12, -1},
+                               {0, 0, 0},
+                               {1, 12, 1}};
+
+
+        int magX=0,magY=0;
         for(int a=0; a<3; a++)
         {
             for(int b=0; b<3; b++)
@@ -33,10 +33,15 @@ __kernel void GradientCalculation(__global char *image, __global char *result, _
                 magY += image[index] * kernelY[a][b];
             }
         }
+        int index = x + y * sizeX;
+        result[index] = sqrt((double)(magX * magX + magY * magY));
+        angle[index] = (atan2((double)magY, (double)magX) * 180) / PI;
     }
-    int index = x + y * sizeX;
-    result[index] = sqrt((double)(magX * magX + magY * magY));
-    angle[index] = (atan2((double)magY, (double)magX) * 180) / PI;
+    else
+    {
+        int index = x + y * sizeX;
+        result[index] = 0;
+    }
 }
 
 
@@ -47,37 +52,54 @@ __kernel void NonMaxSuppression(__global char *image, __global double *angle, __
     unsigned int sizeX = get_global_size(1);
     int index = x + sizeX * y;
 
-    int q=255, r=255;
-    if(0 <= angle[index] < 22.5 || 157.5 <= angle[index] <= 180)
+    int q1=255, r1=255, q2=255, r2=255;
+    if(((0 <= angle[index]) && (angle[index] < 22.5)) || ((157.5 <= angle[index]) && (angle[index] <= 180)))
     {
         int neighbor = x + (y + 1) * sizeX;
-        q = image[neighbor];
+        q1 = image[neighbor];
+        neighbor = x + (y + 2) * sizeX;
+        q2 = image[neighbor];
         neighbor = x + (y - 1) * sizeX;
-        r = image[neighbor];
+        r1 = image[neighbor];
+        neighbor = x + (y - 2) * sizeX;
+        r2 = image[neighbor];
     }
-    else if(22.5 <= angle[index] < 67.5)
+    else if((22.5 <= angle[index]) && (angle[index] < 67.5))
     {
         int neighbor = (x + 1) + (y - 1) * sizeX;
-        q = image[neighbor];
+        q1 = image[neighbor];
+        neighbor = (x + 2) + (y - 2) * sizeX;
+        q2 =  image[neighbor];
         neighbor = (x - 1) + (y + 1) * sizeX;
-        r = image[neighbor];
+        r1 = image[neighbor];
+        neighbor = (x - 2) + (y + 2) * sizeX;
+        r2 = image[neighbor];
+
     }
-    else if(67.5 <= angle[index] < 112.5)
+    else if((67.5 <= angle[index]) && (angle[index] < 112.5))
     {
         int neighbor = (x + 1) + y * sizeX;
-        q = image[neighbor];
+        q1 = image[neighbor];
+        neighbor = (x + 2) + y * sizeX;
+        q2 = image[neighbor];
         neighbor = (x - 1) + y * sizeX;
-        r = image[neighbor];
+        r1 = image[neighbor];
+        neighbor = (x - 2) + y * sizeX;
+        r2 = image[neighbor];
     }
-    else if(112.5 <= angle[index] < 157.5)
+    else if((112.5 <= angle[index]) && (angle[index] < 157.5))
     {
         int neighbor = (x - 1) + (y - 1) * sizeX;
-        q = image[neighbor];
+        q1 = image[neighbor];
+        neighbor = (x - 2) + (y - 2) * sizeX;
+        q2 = image[neighbor];
         neighbor = (x + 1) + (y + 1) * sizeX;
-        r = image[neighbor];
+        r1 = image[neighbor];
+        neighbor = (x + 2) + (y + 2) * sizeX;
+        r2 = image[neighbor];
     }
 
-    if(image[index] >= q && image[index] >=r)
+    if((image[index] >= q1) && (image[index] >=r1) && (image[index] >= q2) && (image[index] >=r2))
         result[index] = image[index];
     else
         result[index] = 0;
