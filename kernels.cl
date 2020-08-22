@@ -52,54 +52,38 @@ __kernel void NonMaxSuppression(__global char *image, __global double *angle, __
     unsigned int sizeX = get_global_size(1);
     int index = x + sizeX * y;
 
-    int q1=255, r1=255, q2=255, r2=255;
+    int q=255, r=255;
     if(((0 <= angle[index]) && (angle[index] < 22.5)) || ((157.5 <= angle[index]) && (angle[index] <= 180)))
     {
         int neighbor = x + (y + 1) * sizeX;
-        q1 = image[neighbor];
-        neighbor = x + (y + 2) * sizeX;
-        q2 = image[neighbor];
+        q = image[neighbor];
         neighbor = x + (y - 1) * sizeX;
-        r1 = image[neighbor];
-        neighbor = x + (y - 2) * sizeX;
-        r2 = image[neighbor];
+        r = image[neighbor];
     }
     else if((22.5 <= angle[index]) && (angle[index] < 67.5))
     {
         int neighbor = (x + 1) + (y - 1) * sizeX;
-        q1 = image[neighbor];
-        neighbor = (x + 2) + (y - 2) * sizeX;
-        q2 =  image[neighbor];
+        q = image[neighbor];
         neighbor = (x - 1) + (y + 1) * sizeX;
-        r1 = image[neighbor];
-        neighbor = (x - 2) + (y + 2) * sizeX;
-        r2 = image[neighbor];
+        r = image[neighbor];
 
     }
     else if((67.5 <= angle[index]) && (angle[index] < 112.5))
     {
         int neighbor = (x + 1) + y * sizeX;
-        q1 = image[neighbor];
-        neighbor = (x + 2) + y * sizeX;
-        q2 = image[neighbor];
+        q = image[neighbor];
         neighbor = (x - 1) + y * sizeX;
-        r1 = image[neighbor];
-        neighbor = (x - 2) + y * sizeX;
-        r2 = image[neighbor];
+        r = image[neighbor];
     }
     else if((112.5 <= angle[index]) && (angle[index] < 157.5))
     {
         int neighbor = (x - 1) + (y - 1) * sizeX;
-        q1 = image[neighbor];
-        neighbor = (x - 2) + (y - 2) * sizeX;
-        q2 = image[neighbor];
+        q = image[neighbor];
         neighbor = (x + 1) + (y + 1) * sizeX;
-        r1 = image[neighbor];
-        neighbor = (x + 2) + (y + 2) * sizeX;
-        r2 = image[neighbor];
+        r = image[neighbor];
     }
 
-    if((image[index] >= q1) && (image[index] >=r1) && (image[index] >= q2) && (image[index] >=r2))
+    if((image[index] >= q) && (image[index] >=r))
         result[index] = image[index];
     else
         result[index] = 0;
