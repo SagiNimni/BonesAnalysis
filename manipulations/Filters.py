@@ -3,11 +3,11 @@ from matplotlib import pyplot
 import numpy as np
 from GPU import CL
 import cv2
-import time
 
 
 class ImageFilters:
-    EdgeDetectionKernels = 'kernels.cl'
+    EdgeDetectionKernels = 'edgeFilters.cl'
+    FindObjectsKernels = 'objectFilters.cl'
 
     def __init__(self, image: np.ndarray):
         self.GPU_process = CL()
@@ -15,7 +15,6 @@ class ImageFilters:
 
     def detect_edges(self, blur_ratio=5, low_threshold_ratio=0.05, high_threshold_ratio=0.09, weak=np.uint32(25),
                      strong=np.uint32(255)):
-        start_time = time.time()
 
         self.GPU_process.load_program(ImageFilters.EdgeDetectionKernels)
         print("3%- C Program Built")
@@ -52,6 +51,7 @@ class ImageFilters:
         result = self.GPU_process.execute('hysteresis', weak, strong)
         print("100%- Edge Tracking by Hysteresis \nEdge Detection Filter Successfully Completed!")
 
+        self.edge_image = result
         return result
 
     @staticmethod
