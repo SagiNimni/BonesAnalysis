@@ -24,11 +24,12 @@ class CL:
         self.image_array = None
 
     def load_program(self, filename, mute=True):
+        directory = 'manipulations/ParralerMethods/'
         if mute:
             old_stdout = sys.stdout
             sys.stdout = open(os.devnull, 'w')
         try:
-            f = open(filename, 'r')
+            f = open(directory + filename, 'r')
             code = "".join(f.readlines())
             print(code)
 
@@ -94,6 +95,23 @@ class CL:
 
                 self.dst_buff.release()
                 self.original_buff.release()
+
+                return result
+
+            elif method == "removeSmallEdges":
+                mf = cl.mem_flags
+                self.label_buff = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=np.array(list(args[0].keys())).astype(np.uint32))
+                self.count_buff = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=np.array(list(args[0].values())).astype(np.uint32))
+                self.program.removeSmallEdges(self.queue, self.image_array.shape, None, self.original_buff,
+                                              self.dst_buff, self.label_buff, self.count_buff,
+                                              np.uint(args[1]), np.uint(len(list(args[0].keys()))))
+                result = np.empty_like(self.image_array)
+                cl._enqueue_read_buffer(self.queue, self.dst_buff, result)
+
+                self.label_buff.release()
+                self.count_buff.release()
+                self.original_buff.release()
+                self.dst_buff.release()
 
                 return result
 

@@ -1,8 +1,8 @@
 from skimage import io
-from matplotlib import pyplot
 import numpy as np
-from GPU import CL
+from manipulations.ParralerMethods.GPU import CL
 import cv2
+from disjoint_set import DisjointSet
 
 
 class ImageFilters:
@@ -12,9 +12,11 @@ class ImageFilters:
     def __init__(self, image: np.ndarray):
         self.GPU_process = CL()
         self.original = image
+        self.edge_image = None
+        self.labels = None
 
     def detect_edges(self, blur_ratio=5, low_threshold_ratio=0.05, high_threshold_ratio=0.09, weak=np.uint32(25),
-                     strong=np.uint32(255)):
+                     strong=np.uint32(255)) -> np.ndarray:
 
         self.GPU_process.load_program(ImageFilters.EdgeDetectionKernels)
         print("3%- C Program Built")
@@ -52,6 +54,61 @@ class ImageFilters:
         print("100%- Edge Tracking by Hysteresis \nEdge Detection Filter Successfully Completed!")
 
         self.edge_image = result
+        return result
+
+    def connected_components(self) -> tuple:
+        if self.edge_image is None:
+            self.detect_edges()
+        unionfind = DisjointSet()
+
+        # First Pass
+        label = 1
+        labels = np.zeros_like(self.edge_image).astype(np.uint32)
+        for i in range(1, self.edge_image.shape[0]-1):
+            for k in range(1, self.edge_image.shape[1]-1):
+                pix = self.edge_image[i, k]
+                if pix == 255:
+                    neighbours = np.unique(np.array([labels[i, k-1], labels[i-1, k-1], labels[i-1, k],
+                                           labels[i-1, k+1]]))
+                    if neighbours[:].any() != 0:
+                        neighbours = np.delete(neighbours, np.where(neighbours == 0))
+                        labels[i, k] = neighbours[0]
+                        for n in range(1, neighbours.shape[0]):
+                            unionfind.union(neighbours[n], neighbours[0])
+
+                    else:
+                        labels[i, k] = label
+                        unionfind.union(label, label)
+                        label += 1
+
+        # Second Pass
+        i = 0
+        for row in labels:
+            j = 0
+            for pix in row:
+                if pix != 0:
+                    root = unionfind.find(pix)
+                    if root != pix:
+                        labels[i, j] = root
+                j += 1
+            i += 1
+
+        unique, counts = np.unique(labels, return_counts=True)
+        unique_labels = dict(zip(unique, counts))
+        self.labels = (unique_labels, labels)
+        print("All The Components Was Successfully Connected!")
+        return self.labels
+
+    def remove_small_objects(self, low_threshold=50):
+        if self.labels is None:
+            self.connected_components()
+        self.GPU_process.load_program(ImageFilters.FindObjectsKernels)
+        print("30%- C Program Built")
+
+        self.GPU_process.load_image(self.labels[1])
+        result = self.GPU_process.execute('removeSmallEdges', self.labels[0], low_threshold)
+        print("100%- Removes small objects")
+
         return result
 
     @staticmethod
