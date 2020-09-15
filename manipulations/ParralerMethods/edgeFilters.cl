@@ -1,23 +1,24 @@
 #define PI 3.14159265358979323846
 
-__kernel void GradientCalculation(__global char *image, __global char *result, __global double *angle, float a, float b, float r)
+__kernel void GradientCalculation(__global unsigned char *image, __global unsigned char *result, __global double *angle, unsigned int gradientRatio, float a, float b, float r)
 {
     unsigned int sizeX = get_global_size(1);
     unsigned int sizeY = get_global_size(0);
 
     unsigned int x = get_global_id(1);
     unsigned int y = get_global_id(0);
+    int i = x + y * sizeX;
 
     float distance = sqrt((float)((x-a)*(x-a) + (y-b)*(y-b)));
     if(distance <= r)
     {
         float kernelX[3][3] = {{-1, 0, 1},
-                               {-12, 0, 12},
+                               {-gradientRatio, 0, gradientRatio},
                                {-1, 0, 1}};
 
-        float kernelY[3][3] = {{-1, -12, -1},
+        float kernelY[3][3] = {{-1, -gradientRatio, -1},
                                {0, 0, 0},
-                               {1, 12, 1}};
+                               {1, gradientRatio, 1}};
 
 
         int magX=0,magY=0;
@@ -37,15 +38,10 @@ __kernel void GradientCalculation(__global char *image, __global char *result, _
         result[index] = sqrt((double)(magX * magX + magY * magY));
         angle[index] = (atan2((double)magY, (double)magX) * 180) / PI;
     }
-    else
-    {
-        int index = x + y * sizeX;
-        result[index] = 0;
-    }
 }
 
 
-__kernel void NonMaxSuppression(__global char *image, __global double *angle, __global char *result)
+__kernel void NonMaxSuppression(__global unsigned char *image, __global double *angle, __global unsigned char *result)
 {
     unsigned int x = get_global_id(1);
     unsigned int y = get_global_id(0);
@@ -90,7 +86,7 @@ __kernel void NonMaxSuppression(__global char *image, __global double *angle, __
 }
 
 
-__kernel void hysteresis(__global char *image, __global char *result, unsigned int weak, unsigned int strong)
+__kernel void hysteresis(__global unsigned char *image, __global unsigned char *result, unsigned int weak, unsigned int strong)
 {
     unsigned int x = get_global_id(1);
     unsigned int y = get_global_id(0);
