@@ -51,7 +51,7 @@ class CL:
         self.image_array = image
 
         # Create OpenCl buffers
-        self.original_buff = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.image_array)
+        self.original_buff = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=np.ascontiguousarray(self.image_array))
         self.dst_buff = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.image_array.nbytes)
 
     def execute(self, method, *args):
@@ -60,8 +60,8 @@ class CL:
                 mf = cl.mem_flags
                 self.angle_buff = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.image_array.astype(np.double).nbytes)
                 self.program.GradientCalculation(self.queue, self.image_array.shape, None, self.original_buff,
-                                                 self.dst_buff, self.angle_buff, np.float32(args[0]),
-                                                 np.float32(args[1]), np.float32(args[2]))
+                                                 self.dst_buff, self.angle_buff, np.uint32(args[0]),
+                                                 np.float32(args[1]), np.float32(args[2]), np.float32(args[3]))
                 image = np.empty_like(self.image_array)
                 angle = np.empty_like(self.image_array.astype(np.double))
                 cl._enqueue_read_buffer(self.queue, self.dst_buff, image)
@@ -108,8 +108,28 @@ class CL:
                 result = np.empty_like(self.image_array)
                 cl._enqueue_read_buffer(self.queue, self.dst_buff, result)
 
+                self.original_buff = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=result)
+                self.dst_buff = cl.Buffer(self.ctx, mf.WRITE_ONLY, (self.image_array.astype(np.uint8)).nbytes)
+                self.program.ConvertLabelsToEdges(self.queue, self.image_array.shape, None, self.original_buff,
+                                                  self.dst_buff)
+                edges = np.empty_like(self.image_array).astype(np.uint8)
+                cl._enqueue_read_buffer(self.queue, self.dst_buff, edges)
+
                 self.label_buff.release()
                 self.count_buff.release()
+                self.original_buff.release()
+                self.dst_buff.release()
+
+                return result, edges
+
+            elif method == "makeBackground":
+                a = np.uint8(args[0])
+                b = np.uint8(args[1])
+                self.program.makeBackground(self.queue, self.image_array.shape, None, self.original_buff,
+                                            self.dst_buff, a[0], a[1], a[2], b[0], b[1], b[2])
+                result = np.empty_like(np.ascontiguousarray(self.image_array))
+                cl._enqueue_read_buffer(self.queue, self.dst_buff, result)
+
                 self.original_buff.release()
                 self.dst_buff.release()
 
