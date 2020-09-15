@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a52a60e-eab8-4d0e-b20c-fa5654d457d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/nimni.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/nimni.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulations/Filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GPU.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulations/ParralerMethods/GPU.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/detectHoles.py" beforeDir="false" afterPath="$PROJECT_DIR$/detectHoles.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kernels.cl" beforeDir="false" afterPath="$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/ImageData/metadata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manipulations/Filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/manipulations/Filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl" beforeDir="false" afterPath="$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,37 +18,37 @@
     <session id="-343265945">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.11" value="3" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="3" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="5" />
-          <entry key="project.open.time.18" value="3" />
-          <entry key="project.open.time.19" value="9" />
+          <entry key="project.open.time.18" value="4" />
+          <entry key="project.open.time.19" value="12" />
           <entry key="project.open.time.20" value="3" />
-          <entry key="project.open.time.21" value="4" />
+          <entry key="project.open.time.21" value="5" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="43" />
+          <entry key="project.opened" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cl" value="13" />
+          <entry key="cl" value="24" />
           <entry key="csv" value="2" />
           <entry key="h" value="8" />
           <entry key="jpeg" value="1" />
-          <entry key="jpg" value="10" />
+          <entry key="jpg" value="12" />
           <entry key="json" value="6" />
           <entry key="md" value="4" />
           <entry key="png" value="4" />
-          <entry key="py" value="56" />
+          <entry key="py" value="84" />
           <entry key="test" value="1" />
           <entry key="tif" value="8" />
           <entry key="tiff" value="1" />
@@ -59,41 +58,42 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C++" value="22" />
-          <entry key="Image" value="24" />
+          <entry key="C++" value="33" />
+          <entry key="Image" value="26" />
           <entry key="JSON" value="6" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="6" />
-          <entry key="Python" value="56" />
+          <entry key="Python" value="84" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="3832" />
-          <entry key="cl" value="13301" />
+          <entry key="Python Console" value="5036" />
+          <entry key="cl" value="14827" />
           <entry key="md" value="11" />
-          <entry key="py" value="28445" />
+          <entry key="py" value="39494" />
           <entry key="test" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C++" value="13303" />
+          <entry key="C++" value="14829" />
           <entry key="Markdown" value="11" />
-          <entry key="Python" value="32277" />
+          <entry key="Python" value="44530" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/detectHoles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+            <state relative-caret-position="-10">
+              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <marker date="1600178268749" expanded="true" signature="361:399" ph="..." />
+                <marker date="1600178268749" expanded="true" signature="396:399" ph="..." />
               </folding>
             </state>
           </provider>
@@ -102,11 +102,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manipulations/Filters.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+            <state relative-caret-position="477">
+              <caret line="70" column="93" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="93" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
-                <marker date="1599382795720" expanded="true" signature="3851:4252" ph="..." />
+                <element signature="e#0#48#0" expanded="true" />
+                <marker date="1600177934763" expanded="true" signature="5813:5993" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,12 +115,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/GPU.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-421">
-              <caret line="60" column="104" selection-start-line="60" selection-start-column="104" selection-end-line="60" selection-end-column="104" />
+            <state relative-caret-position="313">
+              <caret line="63" column="64" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="64" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1599317925544" expanded="true" signature="1950:5510" ph="..." />
+                <element signature="e#520#778#0" />
+                <marker date="1600178038507" expanded="true" signature="1972:6695" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -128,17 +138,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/objectFilters.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+            <state relative-caret-position="629">
+              <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl">
+        <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/colorFilters.cl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="204">
+              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -177,17 +187,20 @@
         <option value="$PROJECT_DIR$/GPU.py" />
         <option value="$PROJECT_DIR$/Filters.py" />
         <option value="$PROJECT_DIR$/DataStructures/UnionFind.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/manipulations/ParralerMethods/objectFilters.cl" />
-        <option value="$PROJECT_DIR$/manipulations/ParralerMethods/GPU.py" />
-        <option value="$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl" />
+        <option value="$PROJECT_DIR$/manipulations/test.py" />
+        <option value="$PROJECT_DIR$/manipulations/ParralerMethods/colorFilters.cl" />
         <option value="$PROJECT_DIR$/manipulations/Filters.py" />
+        <option value="$PROJECT_DIR$/manipulations/ParralerMethods/GPU.py" />
         <option value="$PROJECT_DIR$/detectHoles.py" />
+        <option value="$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="149" />
-    <option name="y" value="-19" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -227,15 +240,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\nimni\PycharmProjects\BonesAnalysis\images" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\nimni\PycharmProjects\BonesAnalysis\ImageData" />
       <recent name="C:\Users\nimni\PycharmProjects\BonesAnalysis\manipulations" />
       <recent name="C:\Users\nimni\PycharmProjects\BonesAnalysis\ParralerMethods" />
       <recent name="C:\Users\nimni\PycharmProjects\BonesAnalysis\kernels" />
       <recent name="C:\Users\nimni\PycharmProjects\BonesAnalysis" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nimni\PycharmProjects\BonesAnalysis\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -264,48 +277,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="C:\Users\nimni\PycharmProjects\BonesAnalysis\manipulations\Filters.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GPU" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BonesAnalysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\nimni\PycharmProjects\BonesAnalysis\ParralerMethods\GPU.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="OpenTiff" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="BonesAnalysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/OpenTiff.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -356,20 +327,62 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BonesAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manipulations" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manipulations/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BonesAnalysis" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.OpenTiff" />
-      <item itemvalue="Python.GPU" />
       <item itemvalue="Python.Filters" />
       <item itemvalue="Python.detectHoles" />
       <item itemvalue="Python.metadata" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.test (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.detectHoles" />
+        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.metadata" />
         <item itemvalue="Python.Filters" />
-        <item itemvalue="Python.OpenTiff" />
-        <item itemvalue="Python.GPU" />
       </list>
     </recent_temporary>
   </component>
@@ -423,11 +436,11 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29934925" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7302424" visible="true" weight="0.335141" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39479393" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.26975763" side_tool="true" weight="0.335141" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.329718" />
@@ -443,14 +456,22 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="neighbours[0]" />
-        <watch expression="neighbours[n]" />
-        <watch expression="unionfind.find(4213)" language="Python" />
+        <watch expression="edges&gt;0" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>self.image_array.dtype</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>result = np.empty_like(self.image_array)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>unionfind.find(4213)</expression-string>
         <language-id>Python</language-id>
@@ -491,46 +512,9 @@
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>np.where((objects == [obj[0], obj[1]]).all(axis=1))[0][0]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python/Python_64bit/Lib/site-packages/numpy/lib/npyio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1371" selection-start-line="1371" selection-end-line="1371" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/array.txt" />
-    <entry file="file://C:/Python/Python_64bit/Lib/site-packages/skimage/io/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/array.csv" />
-    <entry file="file://C:/Python/Python_64bit/Lib/site-packages/imageio/core/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="221" selection-start-line="221" selection-end-line="221" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python/Python_64bit/Lib/site-packages/skimage/io/_io.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp_C001T002.tif" />
-    <entry file="file://$PROJECT_DIR$/temp_C001T001.tif" />
     <entry file="file://$PROJECT_DIR$/temp.ome.tif" />
     <entry file="file://C:/Python/Python_64bit/Lib/site-packages/PIL/JpegImagePlugin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -543,7 +527,6 @@
     <entry file="file://$PROJECT_DIR$/my.jpeg" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Stack Overflow.url" />
     <entry file="file://$PROJECT_DIR$/result.png" />
-    <entry file="file://$PROJECT_DIR$/result.jpg" />
     <entry file="file://$PROJECT_DIR$/result.tiff" />
     <entry file="file://C:/Python/Python_64bit/Lib/site-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -626,9 +609,6 @@
     <entry file="file://$PROJECT_DIR$/images/test.tif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/dog.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/json/encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -651,9 +631,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/result.tif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/result.tif" />
     <entry file="file://$USER_HOME$/.PyCharmCE2018.2/system/python_stubs/608329258/cv2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-568">
@@ -687,56 +665,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/result.jpg" />
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/pyopencl/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="863" selection-start-line="863" selection-end-line="863" />
+        <state relative-caret-position="452">
+          <caret line="568" selection-start-line="568" selection-end-line="568" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/skimage/morphology/binary.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/scipy/ndimage/morphology.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="514" selection-start-line="514" selection-end-line="514" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/dog.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/skimage/morphology/misc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/miniconda3/envs/BonesAnalysis/Lib/site-packages/skimage/io/_plugins/matplotlib_plugin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="149" selection-start-line="149" selection-end-line="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulations/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="216" column="30" selection-start-line="216" selection-start-column="30" selection-end-line="216" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/colorFilters.cl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/GPU.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-421">
-          <caret line="60" column="104" selection-start-line="60" selection-start-column="104" selection-end-line="60" selection-end-column="104" />
+        <state relative-caret-position="313">
+          <caret line="63" column="64" selection-start-line="63" selection-start-column="60" selection-end-line="63" selection-end-column="64" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1599317925544" expanded="true" signature="1950:5510" ph="..." />
+            <element signature="e#520#778#0" />
+            <marker date="1600178038507" expanded="true" signature="1972:6695" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manipulations/Filters.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+        <state relative-caret-position="477">
+          <caret line="70" column="93" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="93" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1599382795720" expanded="true" signature="3851:4252" ph="..." />
+            <element signature="e#0#48#0" expanded="true" />
+            <marker date="1600177934763" expanded="true" signature="5813:5993" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/objectFilters.cl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/detectHoles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="46" lean-forward="true" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        <state relative-caret-position="-10">
+          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1600178268749" expanded="true" signature="361:399" ph="..." />
+            <marker date="1600178268749" expanded="true" signature="396:399" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/objectFilters.cl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="1" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manipulations/ParralerMethods/edgeFilters.cl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
         </state>
       </provider>
     </entry>
