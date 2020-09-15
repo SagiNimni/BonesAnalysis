@@ -13,10 +13,10 @@ __kernel void GradientCalculation(__global unsigned char *image, __global unsign
     if(distance <= r)
     {
         float kernelX[3][3] = {{-1, 0, 1},
-                               {-gradientRatio, 0, gradientRatio},
+                               {(signed)(-gradientRatio), 0, gradientRatio},
                                {-1, 0, 1}};
 
-        float kernelY[3][3] = {{-1, -gradientRatio, -1},
+        float kernelY[3][3] = {{-1, (signed)(-gradientRatio), -1},
                                {0, 0, 0},
                                {1, gradientRatio, 1}};
 
