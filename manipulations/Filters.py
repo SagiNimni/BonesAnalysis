@@ -17,8 +17,8 @@ class ImageFilters:
         self.GPU_process = CL()
         self.current_program = ''
 
-    def canny(self, image: np.ndarray, gradient_ratio=2, blur_ratio=5, low_threshold_ratio=0.05, high_threshold_ratio=0.09,
-              weak=np.uint32(25), strong=np.uint32(255), mute=True) -> np.ndarray:
+    def canny(self, image: np.ndarray, mask=None, gradient_ratio=2, blur_ratio=5, low_threshold_ratio=0.05,
+              high_threshold_ratio=0.09, weak=np.uint32(25), strong=np.uint32(255), mute=True) -> np.ndarray:
         """
         This method uses the GPU cumputing power for some functions.
         Canny edge detection is an algrotim to discover edges in images and it includes four steps:
@@ -39,8 +39,12 @@ class ImageFilters:
         :param high_threshold_ratio: threshold for double threshold step
         :param weak: color for double threshold step
         :param strong: color for double threshold step
+        :param mask: places that should not be included in the edge detection filter
         :return: A image matrix of edges
         """
+        if mask is None:
+            mask = np.zeros_like(image)
+
         if mute:
             print("Canny Filter...", end='', flush=True)
             old_stdout = sys.stdout
@@ -68,7 +72,7 @@ class ImageFilters:
         os.remove('result.tif')
 
         self.GPU_process.load_image(result)
-        result, angle_matrix = self.GPU_process.execute('GradientCalculation', gradient_ratio, a, b, r)
+        result, angle_matrix = self.GPU_process.execute('GradientCalculation', mask, gradient_ratio, a, b, r)
         angle_matrix[angle_matrix < 0] += 180
         print("35%- Gradient Calculation")
 
@@ -136,6 +140,20 @@ class ImageFilters:
 
         return result
 
+    def remove_shapes_inside_shape(self, image: np.ndarray, shape_size=10):
+        print("Removes Shapes Inside Shape...", end='', flush=True)
+
+        if self.current_program != ImageFilters.FindObjectsKernels:
+            self.current_program = ImageFilters.FindObjectsKernels
+            self.GPU_process.load_program(self.current_program)
+
+        self.GPU_process.load_image(image.astype(np.uint8))
+        result = self.GPU_process.execute('removeShapesInsideShape', shape_size)
+        result[np.where(result == 70)] = 0
+
+        print("[DONE]")
+        return result
+
     @staticmethod
     def fill_holes(image: np.ndarray, filling_range=400):
         print("Hole Filling...", end='', flush=True)
@@ -148,6 +166,14 @@ class ImageFilters:
         print("dilation...", end='', flush=True)
         selem = np.ones((neighborhood, neighborhood), dtype=np.uint8)
         result = morphology.binary_dilation(image, selem=selem)
+        print('[DONE]')
+        return result
+
+    @staticmethod
+    def binary_erosion(image: np.ndarray, neighborhood=3):
+        print("erosion...", end='', flush=True)
+        selem = np.ones((neighborhood, neighborhood), dtype=np.uint8)
+        result = morphology.binary_erosion(image, selem=selem)
         print('[DONE]')
         return result
 

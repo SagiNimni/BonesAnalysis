@@ -59,14 +59,16 @@ class CL:
             if method == "GradientCalculation":
                 mf = cl.mem_flags
                 self.angle_buff = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.image_array.astype(np.double).nbytes)
+                mask_buff = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=args[0].astype(np.uint8))
                 self.program.GradientCalculation(self.queue, self.image_array.shape, None, self.original_buff,
-                                                 self.dst_buff, self.angle_buff, np.uint32(args[0]),
-                                                 np.float32(args[1]), np.float32(args[2]), np.float32(args[3]))
+                                                 self.dst_buff, self.angle_buff, mask_buff, np.uint32(args[1]),
+                                                 np.float32(args[2]), np.float32(args[3]), np.float32(args[4]))
                 image = np.empty_like(self.image_array)
                 angle = np.empty_like(self.image_array.astype(np.double))
                 cl._enqueue_read_buffer(self.queue, self.dst_buff, image)
                 cl._enqueue_read_buffer(self.queue, self.angle_buff, angle)
 
+                mask_buff.release()
                 self.angle_buff.release()
                 self.dst_buff.release()
                 self.original_buff.release()
@@ -135,6 +137,16 @@ class CL:
 
                 return result
 
+            elif method == "removeShapesInsideShape":
+                self.program.removeShapesInsideShape(self.queue, self.image_array.shape, None, self.original_buff,
+                                                     self.dst_buff, np.uint32(args[0]))
+                result = np.empty_like(self.image_array)
+                cl._enqueue_read_buffer(self.queue, self.dst_buff, result)
+
+                self.original_buff.release()
+                self.dst_buff.release()
+
+                return result
             else:
                 raise KeyError("The method you entered doesn't exist in the cl file")
 

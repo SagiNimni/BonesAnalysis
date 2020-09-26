@@ -1,6 +1,6 @@
 #define PI 3.14159265358979323846
 
-__kernel void GradientCalculation(__global unsigned char *image, __global unsigned char *result, __global double *angle, unsigned int gradientRatio, float a, float b, float r)
+__kernel void GradientCalculation(__global unsigned char *image, __global unsigned char *result, __global double *angle, __global unsigned char *mask, unsigned int gradientRatio, float a, float b, float r)
 {
     unsigned int sizeX = get_global_size(1);
     unsigned int sizeY = get_global_size(0);
@@ -9,35 +9,40 @@ __kernel void GradientCalculation(__global unsigned char *image, __global unsign
     unsigned int y = get_global_id(0);
     int i = x + y * sizeX;
 
-    float distance = sqrt((float)((x-a)*(x-a) + (y-b)*(y-b)));
-    if(distance <= r)
+    if(mask[i] == 0)
     {
-        float kernelX[3][3] = {{-1, 0, 1},
-                               {(signed)(-gradientRatio), 0, gradientRatio},
-                               {-1, 0, 1}};
-
-        float kernelY[3][3] = {{-1, (signed)(-gradientRatio), -1},
-                               {0, 0, 0},
-                               {1, gradientRatio, 1}};
-
-
-        int magX=0,magY=0;
-        for(int a=0; a<3; a++)
+        float distance = sqrt((float)((x-a)*(x-a) + (y-b)*(y-b)));
+        if(distance <= r)
         {
-            for(int b=0; b<3; b++)
-            {
-                int xn = x + a - 1;
-                int yn = y + b - 1;
+            float kernelX[3][3] = {{-1, 0, 1},
+                                   {(signed)(-gradientRatio), 0, gradientRatio},
+                                   {-1, 0, 1}};
 
-                int index = xn + yn * sizeX;
-                magX += image[index] * kernelX[a][b];
-                magY += image[index] * kernelY[a][b];
+            float kernelY[3][3] = {{-1, (signed)(-gradientRatio), -1},
+                                   {0, 0, 0},
+                                   {1, gradientRatio, 1}};
+
+
+            int magX=0,magY=0;
+            for(int a=0; a<3; a++)
+            {
+                for(int b=0; b<3; b++)
+                {
+                    int xn = x + a - 1;
+                    int yn = y + b - 1;
+
+                    int index = xn + yn * sizeX;
+                    magX += image[index] * kernelX[a][b];
+                    magY += image[index] * kernelY[a][b];
+                }
             }
+            int index = x + y * sizeX;
+            result[index] = sqrt((double)(magX * magX + magY * magY));
+            angle[index] = (atan2((double)magY, (double)magX) * 180) / PI;
         }
-        int index = x + y * sizeX;
-        result[index] = sqrt((double)(magX * magX + magY * magY));
-        angle[index] = (atan2((double)magY, (double)magX) * 180) / PI;
     }
+    else
+        result[i] = 0;
 }
 
 

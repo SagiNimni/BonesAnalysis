@@ -11,8 +11,11 @@ import time
 # TODO connect not connected edges
 
 
-def present(image: np.ndarray):
-    io.imshow(image)
+def present(image: np.ndarray, grayscale=False):
+    if grayscale:
+        io.imshow(image, cmap='gray')
+    else:
+        io.imshow(image)
     io.show()
 
 
@@ -23,25 +26,31 @@ def main():
 
     filters = ImageFilters()
     norm = filters.normalize(original)
-    present(norm)
+
+    mask = filters.make_mask_background(norm, (0, 0, 0), (30, 20, 20))
+    mask = filters.grayscale(mask)
+    mask = morphology.remove_small_objects(mask > 0, min_size=150)
+    mask = filters.binary_dilation(mask, neighborhood=15)
 
     grayed = filters.grayscale(norm)
-    edges = filters.canny(grayed, gradient_ratio=10, low_threshold_ratio=0.23, high_threshold_ratio=0.27, blur_ratio=9)
+    edges = filters.canny(grayed, mask=mask, gradient_ratio=16, low_threshold_ratio=0.23, high_threshold_ratio=0.27, blur_ratio=17)
 
-    mask = filters.make_mask_background(norm, (0, 0, 0), (35, 20, 20))
-    mask = filters.grayscale(mask)
-    mask = filters.binary_dilation(mask,  neighborhood=10)
-    edges[np.where(mask)] = 0
+    hard_edegs = filters.binary_dilation(edges, neighborhood=3)
+    edges[np.where(hard_edegs == True)] = 255
+    edges[np.where(hard_edegs == False)] = 0
+    del hard_edegs
 
-    edges = filters.binary_dilation(edges, neighborhood=4)
-    edges = morphology.remove_small_objects(edges > 0, min_size=200)
-    edges = filters.binary_dilation(edges, neighborhood=4)
-    edges = filters.fill_holes(edges)
+    edges = filters.remove_shapes_inside_shape(edges, shape_size=10)
+    edges = morphology.remove_small_objects(edges, min_size=15)
+    edges = filters.binary_dilation(edges, neighborhood=2)
+    edges = morphology.remove_small_objects(edges, min_size=50)
+    holes = filters.fill_holes(edges)
+    original[np.where(holes)] = [0, 255, 0]
 
     end = time.time()
     print("process takes", (end - start)/60, "minutes")
 
-    present(edges)
+    present(original)
 
 
 if __name__ == '__main__':
